@@ -43,9 +43,10 @@ public class SortProb extends Problem {
 		// TODO Auto-generated method stub
 		String result = super.partialString.get("(0)");
 		selectNumber++;
-		result = result + super.partialString.get(super.examples.get(Integer.toString(selectNumber)).get(0))
-				+super.partialString.get(super.examples.get(Integer.toString(selectNumber)).get(1))
-				+super.partialString.get(super.examples.get(Integer.toString(selectNumber)).get(2));
+		result = result + "<br>" +
+				super.partialString.get(super.examples.get(Integer.toString(selectNumber)).get(0))
+				+ "<br>" +super.partialString.get(super.examples.get(Integer.toString(selectNumber)).get(1))
+				+ "<br>" +super.partialString.get(super.examples.get(Integer.toString(selectNumber)).get(2));
 		return result;
 	}
 }
