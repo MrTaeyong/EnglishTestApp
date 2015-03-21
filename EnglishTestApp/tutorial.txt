@@ -29,9 +29,9 @@
 <S>The key to trade -  whether among people, states, or countries - is specialization. </S>
 
 <S>
-(a) Some people specialize in cutting hair.
-(b) These people exchange their services for money, which then use to buy the specialized goods and services they need from others. 
-(c) Others specialize in fixing computers. 
+(A) Some people specialize in cutting hair.
+(B) These people exchange their services for money, which then use to buy the specialized goods and services they need from others. 
+(C) Others specialize in fixing computers. 
 </S>
 
 <E>

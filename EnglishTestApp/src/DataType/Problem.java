@@ -6,9 +6,8 @@ import java.util.TreeMap;
 
 abstract public class Problem {
 	protected String question; // 문제
-//	protected List<PartialString> partialString = new ArrayList<PartialString>(); // 부분 문장
-//	protected List<String> examples = new ArrayList<String>(); // 보기
-	protected int result = 0;
+
+	protected int selected_number = -1;
 	protected int correctAnswer;
 	//--------------------------------
 	protected Map<String, String> partialString = new TreeMap<String, String>(); // 부분 문장
@@ -54,14 +53,14 @@ abstract public class Problem {
 		this.examples = examples;
 	}
 	
-	public void setResult(int result)
+	public void setSelected_number(int selected_number)
 	{
-		this.result = result;
+		this.selected_number = selected_number;
 	}
 	
-	public int getResult()
+	public int getSelected_number()
 	{
-		return this.result;
+		return this.selected_number;
 	}
 	public int getExampleCount() {
 		return examples.size();
