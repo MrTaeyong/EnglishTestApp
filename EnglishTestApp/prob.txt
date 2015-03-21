@@ -1,0 +1,43 @@
+<Q>다음 문장이 들어가기에 가장 적절한 곳은?</Q>
+
+<S>The team at Smartcane took on this challenge by copying the skills of animals such as bats, which emit sonar calls into their surroundings and use the echoes bouncing back from nearby objects to divert around them</S>
+
+<S>Professor Balak at the Indian Institute of Technology in Delhi heads a team behind the SmartcaneTM, a new device using ultrasound to guide the visually impaired through the busy treets of India by building upon th widely used white cane. “A white cane is an excellent device, providing a lot of information to users.” he says, (A) “But it is poor at detecting obstacles that are above waist height and do not have a touch-point on the ground, such as a tree branch sticking out into your path. ” (B) The smart technology version instead sends out ultrasound waves via a device attached to a standard white cane: it detects them on thir return. and uses vibrations to inform users of any obstacles in their way. ( C ) The real benefit comes from the ultrasound scanning a 45 degree span above th knee, providing information a regular cane simply can’t provide. ( D ) As peple move the cane from left to right when they walk, vibrations detected on one side mean they should move towards the other. ( E ) Differing patterns and intensities of vibration tell users the distance of the object obstructing their path. as far as three meters away.</S>
+
+<E>
+<N>1.(A)</N>
+<N>2.(B)</N>
+<N>3.(C)</N>
+<N>4.(D)</N>
+<N>5.(E)</N>
+</E>
+
+<Q>다음 글에서 전체 흐름과 관계 없는 문장을 고르시오.</Q>
+
+ <S>t=To conclusively set new safety standards for CT radiation, reserchers are beginning to directly inverstigate the number of cancers among people who have received CT scans. ⓵About a dozen such studies from different countries will be publicshed in the next few years.⓶In the meantime. some reserchers have started testing whether good images can be produced with radiation doses lower than those gerated in typical CT scans. ⓷Radiologists at Mass General Hospital have an unusual way of conducting such investigations. ⓸A single CT scan subjects the human body to between 150 and 1,100 times the radiation of a conventional X-ray.⓹In that way, they scan bodies many times whithout worrying about making pepeple sick and perform an autopsy to check whether the scan has correctly identified a medical problem. Rather then recruiting living. breathing human volunteers for their studies. they work with cadavers</S>
+<E>
+<N>1.⓵</N>
+<N>2.⓶</N>
+<N>3.⓷</N>
+<N>4.⓸</N>
+<N>5.⓹</N>
+</E>
+
+<Q>주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?</Q>
+
+<S>Imagine that you are feeling a bit down because you have just moved to a new neighborhood and are finding it difficult to meet people</S>
+
+<S>(A) After a few weeks you find that you are indeed srrounded by a close circle of friends. In fact. it is quite possible that the fortuneteller did not actually see into the future but instead actually helped to create it
+
+(B) Just for fun. you decide to go along to the local fortuneteller to find out what the future holds for you. The fortuneteller gazes into her crystal ball. smiles and says that the future looks bright. She says that within a few months you will be surrounded by many close and lotal friends
+
+(C) You are ressured by her comments and walk away feeling much happier than when you arrived. Because you now feel happy and confident about the future. you smile more. go out more and cath to more pepole.
+</S>
+
+<E>
+<N>1. (A) - (B) - (C)</N>
+<N>2. (A) - (C) - (B)</N>
+<N>3. (B) - (A) - (C)</N>
+<N>4. (B) - (C) - (A)</N> 
+<N>5. (C) - (A) - (B)</N>
+</E>
