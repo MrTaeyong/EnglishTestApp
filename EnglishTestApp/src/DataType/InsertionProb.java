@@ -17,9 +17,9 @@ public class InsertionProb extends Problem {
 	public String getProblem() {
 		// TODO Auto-generated method stub
 		String result = new String();
-		String enter = new String("\r\n");
+		String enter = new String("<br>");
 		
-		result = result.concat(super.question + enter + enter);
+		result = result.concat("<b>"+super.question+"</b>" + enter + enter);
 		
 		Iterator<String> is = super.partialString.keySet().iterator();
 		while(is.hasNext()) {
