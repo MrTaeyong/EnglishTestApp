@@ -26,7 +26,7 @@
 
 <Q>※ 주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은? </Q>
 
-<S>The key to trade -  whether among people, states, or countries - is specialization. </S>
+<S>The key to trade -  whether among people, states, or countries - is specialization.</S>
 
 <S>
 (a) Some people specialize in cutting hair.

@@ -1,5 +1,6 @@
 package Control;
 
+import java.awt.Color;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,6 +29,8 @@ public class Controller implements ActionListener,ItemListener {
 		probList = pp.parse();
 		this.mainWindow.textAreaLeft.setText(probList.get(problemNumber).getProblem());
 		setExample();
+		initNumList();
+		setNumList();
 	}
 	public void setExample()
 	{
@@ -97,10 +100,26 @@ public class Controller implements ActionListener,ItemListener {
 			{
 				mainWindow.textAreaRight.setText(probList.get(problemNumber).getResult(i));
 				probList.get(problemNumber).setResult(i);
-				break;	
+				break;
 			}
 		}
 		
+	}
+	
+	private void initNumList() {
+		if(probList.size() < 5) {
+			for(int i = mainWindow.numList.size() ; i > probList.size() ; i--)	
+				mainWindow.numList.get(i-1).setVisible(false);
+		}
+	}
+	
+	private void setNumList() {
+		mainWindow.numList.get(0).setBackground(Color.GREEN);
+		mainWindow.numList.get(1).setBackground(Color.GREEN);
+		mainWindow.numList.get(0).setBackground(Color.white);
+		//JLabel a = new ProblemNumber(1);
+		//a.setBackground(Color.GREEN);
+		//numList.add(a);
 	}
 
 }

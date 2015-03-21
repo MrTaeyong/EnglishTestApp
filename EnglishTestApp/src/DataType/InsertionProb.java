@@ -25,8 +25,9 @@ public class InsertionProb extends Problem {
 		while(is.hasNext()) {
 			String temp = is.next();
 			if(temp.length() > 1) {
-				if('A' <= temp.charAt(1) && temp.charAt(1) <= 'Z')
-					result = result.concat(temp + super.partialString.get(temp));
+				if(('A' <= temp.charAt(1) && temp.charAt(1) <= 'Z') || 
+						('a' <= temp.charAt(1) && temp.charAt(1) <= 'z'))
+					result = result.concat(" " + temp + super.partialString.get(temp));
 				else
 					if(temp.charAt(1) == '0') {
 						result = result.concat("<table border=\"1\">");
@@ -35,7 +36,7 @@ public class InsertionProb extends Problem {
 					} else 
 						result = result.concat(super.partialString.get(temp));
 			} else {
-				result = result.concat(temp + super.partialString.get(temp));
+				result = result.concat(" " + temp + super.partialString.get(temp));
 			}
 		}
 		return result;

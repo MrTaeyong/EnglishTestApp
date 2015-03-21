@@ -27,14 +27,17 @@ public class SortProb extends Problem {
 		while(is.hasNext()) {
 			String temp = is.next();
 			if(temp.length() > 1) {
-				if('A' <= temp.charAt(1) && temp.charAt(1) <= 'Z')
-					result = result.concat(temp + super.partialString.get(temp) + enter);
+				if(('A' <= temp.charAt(1) && temp.charAt(1) <= 'Z') || 
+						('a' <= temp.charAt(1) && temp.charAt(1) <= 'z'))
+					result = result.concat(" " + temp + super.partialString.get(temp) + enter);
 				else
 					result = result.concat(super.partialString.get(temp) + enter + enter);
 			} else {
-				result = result.concat(temp + super.partialString.get(temp));
+				result = result.concat(" " + temp + super.partialString.get(temp));
 			}
 		}
+		System.out.println(super.partialString.toString());
+		System.out.println(result);
 		return result;
 	}
 	
