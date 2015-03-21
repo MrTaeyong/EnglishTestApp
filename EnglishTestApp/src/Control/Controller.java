@@ -83,20 +83,12 @@ public class Controller implements ActionListener,ItemListener {
 		{
 			if(mainWindow.radioButton[i].isSelected())
 			{
-				
-				
 				mainWindow.textAreaRight.setText(probList.get(problemNumber).getResult(i));
 				probList.get(problemNumber).setResult(i);
-				break;
-				
+				break;	
 			}
 		}
 		
 	}
-	public void TestCommit()
-	{
-		return;
-	}
-	}
-	
+
 }
