@@ -52,4 +52,8 @@ abstract public class Problem {
 	public void setExamples(Map<String, List<String>> examples) {
 		this.examples = examples;
 	}
+	
+	public int getExampleCount() {
+		return examples.size();
+	}
 }
