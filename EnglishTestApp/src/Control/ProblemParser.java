@@ -43,6 +43,7 @@ public class ProblemParser {
 		String question = null;
 		Map<String, String> partialString = new TreeMap<String, String>();
 		Map<String, List<String>> examples = new TreeMap<String, List<String>>();
+		int correctAnswer = 0;
 		
 		try {
 			while((readedChar = reader.read()) != -1) {				
@@ -66,11 +67,16 @@ public class ProblemParser {
 						String ex = buf.toString();
 						examples.put(ex.split("\\.")[0], splitLabelOfExample(ex));
 					}
+					else if( temp.equals("/C") ) { // 정답
+						buf.delete(buf.length() - 3, buf.length()); // </C 문자열을 지움
+						correctAnswer = Integer.parseInt(buf.toString());
+					}
 					else if( temp.equals("/E") ) { // 한 문제 끝
-						result.add(generateProblemInstance(question, partialString, examples));
+						result.add(generateProblemInstance(question, partialString, examples, correctAnswer));
 						question = null;
 						partialString = new TreeMap<String, String>();
 						examples = new TreeMap<String, List<String>>();
+						correctAnswer = 0;
 						labelNumber = 0;
 					}
 					
@@ -104,7 +110,7 @@ public class ProblemParser {
 	 * @param examples
 	 * @return
 	 */
-	private Problem generateProblemInstance(String question, Map<String, String> partialString, Map<String, List<String>> examples) {
+	private Problem generateProblemInstance(String question, Map<String, String> partialString, Map<String, List<String>> examples, int correctAnswer) {
 		Problem result = null;
 		if( question.contains("들어") && question.contains("적절") )
 			result = new InsertionProb();
@@ -118,6 +124,7 @@ public class ProblemParser {
 		result.setQuestion(question);
 		result.setPartialString(partialString);
 		result.setExamples(examples);
+		result.setCorrectAnswer(correctAnswer);
 		
 		return result;
 	}
@@ -136,7 +143,7 @@ public class ProblemParser {
 		
 		for( int i = 0; i < sentence.length(); i++ ) {
 			temp = sentence.charAt(i);
-			if( temp == '(' || (temp >= 9461 && temp <= 9470) ) { // 9461 ~ 9470은 원 숫자 처리..
+			if( temp == '(' || temp == '<' || (temp >= 9461 && temp <= 9470) ) { // 9461 ~ 9470은 원 숫자 처리..
 				if( buf.length() > 0 ) { // 새로운 레이블이 나왔을 때 버퍼가 차있으면 앞의 부분문자열 처리
 					if( labelBuf.length() > 0 )
 						result.put(labelBuf.toString(), buf.toString().trim());
@@ -153,6 +160,12 @@ public class ProblemParser {
 				labelBuf.replace(0, labelBuf.length(), labelBuf.toString().replaceAll(" ", ""));
 				labeling = false; // 레이블 읽기 종료
 				continue;
+			}
+			else if( temp == '<' ) {
+				
+			}
+			else if( temp == '>' ) {
+				
 			}
 			
 			if( labeling ) { // 레이블을 읽는 중이면 문자를 레이블 버퍼에 추가
@@ -184,14 +197,7 @@ public class ProblemParser {
 	 * @return
 	 */
 	private List<String> splitLabelOfExample(String example) {
-		StringBuilder strBuilder = new StringBuilder(example.trim());
-		char tempChar = strBuilder.charAt(0);
-		
-		if( tempChar >= 9461 && tempChar <= 9470 ) { // 원 숫자를 일반 숫자로 변경
-			strBuilder.replace(0, 0, (char)(tempChar - 9412) + ".");
-		}
-		
-		String[] token = strBuilder.toString().split("\\.");
+		String[] token = example.split("\\.");
 		List<String> result = new LinkedList<String>();
 		
 		if( token.length == 2 )

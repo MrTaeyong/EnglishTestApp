@@ -5,10 +5,11 @@
 <S>"Scholars offer three related but different opinions about this puzzle. (a) One opinion is that the paintings were a record of the seasonal migrations made by herds. (b) Because some paintings were made directly over others, obliterating them, it is probable that a painting's value ended with the migration it pictured. (c) Unfortunately, this explanation fails to explain the hidden locations, unless the migrations were celebrated with secret ceremonies. (d)</S>
 
 <E>
-<N>⓵ (a) (정답)</N>
-<N>⓶ (b)</N>
-<N>⓷ (c)</N>
-<N>⓸ (d)</N>
+<N>1. (a)</N>
+<N>2. (b)</N>
+<N>3. (c)</N>
+<N>4. (d)</N>
+<C>1</C>
 </E>
 
 <Q>※ 다음 글에서 전체 흐름과 관계 없는 문장을 고르시오. </Q>
@@ -16,10 +17,11 @@
 <S>Demy Mood, a lyricist of well-known pop songs over the past two decades, has recently published a collection of poetry. (a) Many critics are surprised by the emotional depth Mood has been able to create in this remarkable volume of poems. (b) The recording company is releasing a CD with all of Mood's most popular songs. (c) Mood's ability to pen sharp and subtle imagery in song lyrics has clearly flowed into her poetry. (d) Most reviewers agree that her poems, while rough in some spots, are unique and well worth a read.</S>
 
 <E>
-<N>⓵ (a) </N>
-<N>⓶ (b) (정답)</N>
-<N>⓷ (c)</N>
-<N>⓸ (d)</N>
+<N>1. (a) </N>
+<N>2. (b)</N>
+<N>3. (c)</N>
+<N>4. (d)</N>
+<C>2</C>
 </E>
 
 <Q>※ 주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은? </Q>
@@ -33,11 +35,12 @@
 </S>
 
 <E>
-<N>① (A)-(B)-(C)    </N>
-<N>② (A)-(C)-(B) -정답</N>
-<N>③ (B)-(C)-(A)  </N>
-<N>④ (C)-(A)-(B)</N>
-<N>⑤ (C)-(B)-(A)</N>
+<N>1. (A)-(B)-(C)</N>
+<N>2. (A)-(C)-(B)</N>
+<N>3. (B)-(C)-(A)</N>
+<N>4. (C)-(A)-(B)</N>
+<N>5. (C)-(B)-(A)</N>
+<C>2</C>
 </E>
 
 <Q>※ 글의 흐름으로 보아, 밑줄 친 단어의 뜻으로 가장 적절한 것을 고르시오. </Q>
@@ -45,11 +48,12 @@
   <S>It was once believed a person with hiccups was possessed by the devils. Many strange <U>remedies</U> are supposed to stop hiccups, such as scaring the person or having the person hold her nose while drinking water.</S>
   
   <E>
-  <N>① diagnoses</N>
-  <N>② cures  </N>
-  <N>③ witch doctors</N>
-  <N>④ drugs</N>
-  <N>⑤ customs  </N>
+  <N>1. diagnoses</N>
+  <N>2. cures</N>
+  <N>3. witch doctors</N>
+  <N>4. drugs</N>
+  <N>5. customs</N>
+<C>2</C>
   </E>
 
   

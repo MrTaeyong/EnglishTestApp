@@ -9,6 +9,7 @@ abstract public class Problem {
 //	protected List<PartialString> partialString = new ArrayList<PartialString>(); // 부분 문장
 //	protected List<String> examples = new ArrayList<String>(); // 보기
 	protected int result;
+	protected int correctAnswer;
 	//--------------------------------
 	protected Map<String, String> partialString = new TreeMap<String, String>(); // 부분 문장
 	protected Map<String, List<String>> examples = new TreeMap<String, List<String>>(); // 보기
@@ -64,5 +65,9 @@ abstract public class Problem {
 	}
 	public int getExampleCount() {
 		return examples.size();
+	}
+	
+	public void setCorrectAnswer(int correctAnswer) {
+		 this.correctAnswer = correctAnswer;
 	}
 }
