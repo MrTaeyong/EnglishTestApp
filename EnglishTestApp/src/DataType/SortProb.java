@@ -19,30 +19,21 @@ public class SortProb extends Problem {
 	public String getProblem() {
 		// TODO Auto-generated method stub
 		String result = new String();
-		String enter = new String("\r\n");
+		String enter = new String("<br>");
 		
-		result = result.concat(super.question + enter + enter);
+		result = result.concat("<b>"+super.question+"</b>" + enter + enter);
 		
 		Iterator<String> is = super.partialString.keySet().iterator();
 		while(is.hasNext()) {
 			String temp = is.next();
 			if(temp.length() > 1) {
 				if('A' <= temp.charAt(1) && temp.charAt(1) <= 'Z')
-					result = result.concat(temp + super.partialString.get(temp));
+					result = result.concat(temp + super.partialString.get(temp) + enter);
 				else
-					result = result.concat(super.partialString.get(temp));
+					result = result.concat(super.partialString.get(temp) + enter + enter);
 			} else {
 				result = result.concat(temp + super.partialString.get(temp));
 			}
-		}
-		LinkedHashMap<String, String> aa = new LinkedHashMap<String, String>();
-		aa.put("a", "ssw1");
-		aa.put("c", "ssw3");
-		aa.put("b", "ssw2");
-		//System.out.println(aa.toString());
-		Iterator<String> is1 = aa.keySet().iterator();
-		while(is1.hasNext()) {
-			System.out.println(is1.next());
 		}
 		return result;
 	}
