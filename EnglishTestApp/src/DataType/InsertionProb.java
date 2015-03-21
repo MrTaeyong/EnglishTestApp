@@ -28,7 +28,12 @@ public class InsertionProb extends Problem {
 				if('A' <= temp.charAt(1) && temp.charAt(1) <= 'Z')
 					result = result.concat(temp + super.partialString.get(temp));
 				else
-					result = result.concat(super.partialString.get(temp));
+					if(temp.charAt(1) == '0') {
+						result = result.concat("<table border=\"1\">");
+						result = result.concat("<tr>"+super.partialString.get(temp)+"</tr>");
+						result = result.concat("</table>" + enter);
+					} else 
+						result = result.concat(super.partialString.get(temp));
 			} else {
 				result = result.concat(temp + super.partialString.get(temp));
 			}
