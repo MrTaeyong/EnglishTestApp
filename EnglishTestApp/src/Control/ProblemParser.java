@@ -25,7 +25,7 @@ public class ProblemParser {
 	
 	public List<Problem> parse() throws Exception {
 		try {
-			return parse(new File("prob.txt"));
+			return parse(new File("tutorial.txt"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -139,9 +139,9 @@ public class ProblemParser {
 			if( temp == '(' || (temp >= 9461 && temp <= 9470) ) { // 9461 ~ 9470은 원 숫자 처리..
 				if( buf.length() > 0 ) { // 새로운 레이블이 나왔을 때 버퍼가 차있으면 앞의 부분문자열 처리
 					if( labelBuf.length() > 0 )
-						result.put(labelBuf.toString(), buf.toString());
+						result.put(labelBuf.toString(), buf.toString().trim());
 					else
-						result.put("(" + String.valueOf(labelNumber++) + ")", buf.toString());
+						result.put("(" + String.valueOf(labelNumber++) + ")", buf.toString().trim());
 					
 					labelBuf.delete(0, labelBuf.length());
 					buf.delete(0, buf.length());
@@ -156,6 +156,8 @@ public class ProblemParser {
 			}
 			
 			if( labeling ) { // 레이블을 읽는 중이면 문자를 레이블 버퍼에 추가
+				if( temp == ' ')
+					continue;
 				labelBuf.append(temp);
 				if( temp >= 9461 && temp <= 9470 )
 					labeling = false; // 원 숫자는 ')' 문자가 나오지 않으므로 여기서 종료 처리
@@ -182,7 +184,14 @@ public class ProblemParser {
 	 * @return
 	 */
 	private List<String> splitLabelOfExample(String example) {
-		String[] token = example.split("\\.");
+		StringBuilder strBuilder = new StringBuilder(example.trim());
+		char tempChar = strBuilder.charAt(0);
+		
+		if( tempChar >= 9461 && tempChar <= 9470 ) { // 원 숫자를 일반 숫자로 변경
+			strBuilder.replace(0, 0, (char)(tempChar - 9412) + ".");
+		}
+		
+		String[] token = strBuilder.toString().split("\\.");
 		List<String> result = new LinkedList<String>();
 		
 		if( token.length == 2 )
