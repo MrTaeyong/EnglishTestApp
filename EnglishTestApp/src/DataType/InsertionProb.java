@@ -44,8 +44,7 @@ public class InsertionProb extends Problem {
 	public String getResult(int selectNumber) {
 		// TODO Auto-generated method stub
 	
-		String exam,result = ""
-				;
+		String exam,result = "";
 		Iterator it = super.partialString.keySet().iterator();
 		exam = super.partialString.get("(0)");
 		
