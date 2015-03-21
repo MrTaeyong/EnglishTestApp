@@ -64,7 +64,7 @@ public class ProblemParser {
 					}
 					else if( temp.equals("/N") ) { // 보기
 						buf.delete(buf.length() - 3, buf.length()); // </N 문자열을 지움
-						String ex = buf.toString();
+						String ex = buf.toString().toUpperCase();
 						examples.put(ex.split("\\.")[0], splitLabelOfExample(ex));
 					}
 					else if( temp.equals("/C") ) { // 정답
@@ -157,7 +157,7 @@ public class ProblemParser {
 			}
 			else if( temp == ')' ) {
 				labelBuf.append(temp);
-				labelBuf.replace(0, labelBuf.length(), labelBuf.toString().replaceAll(" ", ""));
+				labelBuf.replace(0, labelBuf.length(), labelBuf.toString().replaceAll(" ", "").toUpperCase());
 				labeling = false; // 레이블 읽기 종료
 				continue;
 			}
@@ -199,7 +199,7 @@ public class ProblemParser {
 		else if( token.length != 1)
 			return null;
 		
-		token = example.split("-");
+		token = example.toUpperCase().split("-");
 		
 		for( int i = 0; i < token.length; i++)
 			result.add(token[i].trim());
