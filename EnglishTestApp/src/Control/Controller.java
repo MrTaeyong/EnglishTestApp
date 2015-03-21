@@ -43,15 +43,27 @@ public class Controller implements ActionListener,ItemListener {
 		if(e.getActionCommand().equals("Next")){
 			
 			problemNumber++;
-			
+			if(probList.get(problemNumber).getResult() == 0)
+			{
 			//문제 출력
-			mainWindow.textAreaLeft.setText(probList.get(problemNumber).getProblem());
-			mainWindow.buttonGroup.clearSelection();
-			setExample();
+				mainWindow.textAreaLeft.setText(probList.get(problemNumber).getProblem());
+				mainWindow.buttonGroup.clearSelection();
+				setExample();
 			
-			mainWindow.textAreaRight.setText(null);
+				mainWindow.textAreaRight.setText(null);
 		
-			mainWindow.repaint();
+				mainWindow.repaint();
+			}
+			else
+			{
+				mainWindow.textAreaLeft.setText(probList.get(problemNumber).getProblem());
+				mainWindow.buttonGroup.clearSelection();
+				setExample();
+			
+				mainWindow.textAreaRight.setText(null);
+		
+				mainWindow.repaint();
+			}
 		}
 		else if(e.getActionCommand().equals("Pre")){
 			System.out.println("pre");
