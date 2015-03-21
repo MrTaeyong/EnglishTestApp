@@ -64,7 +64,7 @@ public class ProblemParser {
 					}
 					else if( temp.equals("/N") ) { // 보기
 						buf.delete(buf.length() - 3, buf.length()); // </N 문자열을 지움
-						String ex = buf.toString();
+						String ex = buf.toString().toUpperCase();
 						examples.put(ex.split("\\.")[0], splitLabelOfExample(ex));
 					}
 					else if( temp.equals("/C") ) { // 정답
@@ -143,7 +143,7 @@ public class ProblemParser {
 		
 		for( int i = 0; i < sentence.length(); i++ ) {
 			temp = sentence.charAt(i);
-			if( temp == '(' || temp == '<' || (temp >= 9461 && temp <= 9470) ) { // 9461 ~ 9470은 원 숫자 처리..
+			if( temp == '(' || (temp >= 9461 && temp <= 9470) ) { // 9461 ~ 9470은 원 숫자 처리..
 				if( buf.length() > 0 ) { // 새로운 레이블이 나왔을 때 버퍼가 차있으면 앞의 부분문자열 처리
 					if( labelBuf.length() > 0 )
 						result.put(labelBuf.toString(), buf.toString().trim());
@@ -157,15 +157,9 @@ public class ProblemParser {
 			}
 			else if( temp == ')' ) {
 				labelBuf.append(temp);
-				labelBuf.replace(0, labelBuf.length(), labelBuf.toString().replaceAll(" ", ""));
+				labelBuf.replace(0, labelBuf.length(), labelBuf.toString().replaceAll(" ", "").toUpperCase());
 				labeling = false; // 레이블 읽기 종료
 				continue;
-			}
-			else if( temp == '<' ) {
-				
-			}
-			else if( temp == '>' ) {
-				
 			}
 			
 			if( labeling ) { // 레이블을 읽는 중이면 문자를 레이블 버퍼에 추가
@@ -205,7 +199,7 @@ public class ProblemParser {
 		else if( token.length != 1)
 			return null;
 		
-		token = example.split("-");
+		token = example.toUpperCase().split("-");
 		
 		for( int i = 0; i < token.length; i++)
 			result.add(token[i].trim());
