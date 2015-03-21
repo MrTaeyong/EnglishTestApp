@@ -53,6 +53,15 @@ abstract public class Problem {
 		this.examples = examples;
 	}
 	
+	public void setResult(int result)
+	{
+		this.result = result;
+	}
+	
+	public int getResult()
+	{
+		return this.result;
+	}
 	public int getExampleCount() {
 		return examples.size();
 	}

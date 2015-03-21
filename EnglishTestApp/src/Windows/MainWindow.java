@@ -37,6 +37,7 @@ public class MainWindow extends JFrame {
 	public List<JLabel> numList;
 	public Controller controller;
 	public JRadioButton[] radioButton;
+	public 	ButtonGroup buttonGroup;
 	public MainWindow() {
 		setBounds(0, 0, 500, 500);
 		setMinimumSize(new Dimension(1500, 1000));
@@ -109,7 +110,7 @@ public class MainWindow extends JFrame {
 		
 		
 		radioButton = new JRadioButton[NUMBER_OF_EXAMPLES];
-		ButtonGroup buttonGroup = new ButtonGroup();
+		buttonGroup = new ButtonGroup();
 		for(int i = 0; i < NUMBER_OF_EXAMPLES; i++) {
 			radioButton[i] = new JRadioButton();
 			radioButton[i].setHorizontalAlignment(JRadioButton.CENTER);

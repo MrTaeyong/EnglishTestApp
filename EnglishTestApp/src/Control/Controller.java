@@ -26,7 +26,11 @@ public class Controller implements ActionListener,ItemListener {
 		ProblemParser pp = new ProblemParser();
 		probList = pp.parse();
 		this.mainWindow.textAreaLeft.setText(probList.get(problemNumber).getProblem());
-		for(int i =0; i < 5; i++)
+		setExample();
+	}
+	public void setExample()
+	{
+		for(int i =0; i < probList.get(problemNumber).getExampleCount(); i++)
 		{
 			this.mainWindow.radioButton[i].setText(probList.get(problemNumber).getExamples(i));;
 		}
@@ -35,9 +39,23 @@ public class Controller implements ActionListener,ItemListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getActionCommand().equals("Next")){
-			System.out.println("Next");
+			
 			problemNumber++;
+			
+			//문제 출력
 			mainWindow.textAreaLeft.setText(probList.get(problemNumber).getProblem());
+			//라디오 버튼 초기화
+			for(int i = 0; i < probList.get(problemNumber).getExampleCount(); i++)
+			{
+				mainWindow.radioButton[i].setSelected(false);
+				//mainWindow.buttonGroup.setSelected(mainWindow.radioButton[i], false);
+			}
+			setExample();
+			
+			
+//			mainWindow.panelLeftInner.repaint();
+			mainWindow.textAreaRight.setText(null);
+			mainWindow.repaint();
 		}
 		else if(e.getActionCommand().equals("Pre")){
 			System.out.println("pre");
@@ -50,20 +68,28 @@ public class Controller implements ActionListener,ItemListener {
 			{
 				problemNumber--;
 				mainWindow.textAreaLeft.setText(probList.get(problemNumber).getProblem());
+				setExample();
+				for(int i = 0; i < probList.get(problemNumber).getExampleCount(); i++)
+				{
+					mainWindow.radioButton[i].setSelected(false);
+				}
+				mainWindow.radioButton[probList.get(problemNumber).getResult()].setSelected(true);
+				
 			}
 		}
 	}
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 		// TODO Auto-generated method stub
-		String result;
+		
 		for(int i = 0; i < 5; i++)
 		{
 			if(mainWindow.radioButton[i].isSelected())
 			{
 				
-				result = probList.get(problemNumber).getResult(i);
-				mainWindow.textAreaRight.setText(result);
+				
+				mainWindow.textAreaRight.setText(probList.get(problemNumber).getResult(i));
+				probList.get(problemNumber).setResult(i);
 				break;
 				
 			}
