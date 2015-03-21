@@ -49,8 +49,6 @@ public class Controller implements ActionListener,ItemListener {
 			mainWindow.buttonGroup.clearSelection();
 			setExample();
 			
-			
-//			mainWindow.panelLeftInner.repaint();
 			mainWindow.textAreaRight.setText(null);
 		
 			mainWindow.repaint();
@@ -94,6 +92,11 @@ public class Controller implements ActionListener,ItemListener {
 			}
 		}
 		
+	}
+	public void TestCommit()
+	{
+		return;
+	}
 	}
 	
 }
