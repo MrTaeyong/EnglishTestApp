@@ -75,7 +75,7 @@ public class MainWindow extends JFrame {
 		JPanel panelSouth = new JPanel();
 		panelSouth.add("West", btnPrev);
 		{
-			JLabel a = new ProblemNumber(1);
+			//JLabel a = new ProblemNumber(1);
 			//a.setBackground(Color.GREEN);
 			//numList.add(a);
 			for(int i = 1; i <= 5; i++)
