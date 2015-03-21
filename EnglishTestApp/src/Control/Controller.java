@@ -48,8 +48,9 @@ public class Controller implements ActionListener,ItemListener {
 			for(int i = 0; i < probList.get(problemNumber).getExampleCount(); i++)
 			{
 				mainWindow.radioButton[i].setSelected(false);
-				//mainWindow.buttonGroup.setSelected(mainWindow.radioButton[i], false);
+				
 			}
+	
 			setExample();
 			
 			
