@@ -9,6 +9,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import javax.swing.AbstractButton;
+import javax.swing.ButtonModel;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
@@ -34,6 +35,7 @@ public class Controller implements ActionListener,ItemListener {
 		{
 			this.mainWindow.radioButton[i].setText(probList.get(problemNumber).getExamples(i));;
 		}
+		
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -44,12 +46,13 @@ public class Controller implements ActionListener,ItemListener {
 			
 			//문제 출력
 			mainWindow.textAreaLeft.setText(probList.get(problemNumber).getProblem());
-				
+			mainWindow.buttonGroup.clearSelection();
 			setExample();
 			
 			
 //			mainWindow.panelLeftInner.repaint();
 			mainWindow.textAreaRight.setText(null);
+		
 			mainWindow.repaint();
 		}
 		else if(e.getActionCommand().equals("Pre")){
@@ -71,6 +74,7 @@ public class Controller implements ActionListener,ItemListener {
 				mainWindow.radioButton[probList.get(problemNumber).getResult()].setSelected(true);
 				
 			}
+			mainWindow.repaint();
 		}
 	}
 	@Override
