@@ -44,13 +44,7 @@ public class Controller implements ActionListener,ItemListener {
 			
 			//문제 출력
 			mainWindow.textAreaLeft.setText(probList.get(problemNumber).getProblem());
-			//라디오 버튼 초기화
-			for(int i = 0; i < probList.get(problemNumber).getExampleCount(); i++)
-			{
-				mainWindow.radioButton[i].setSelected(false);
 				
-			}
-	
 			setExample();
 			
 			
